@@ -6,7 +6,7 @@ import java.util.function.Predicate;
 
 public class StringSchema {
     private boolean requiredState = false;
-    private List<Predicate<Object>> predicates = new ArrayList<>();
+    private final List<Predicate<Object>> predicates = new ArrayList<>();
 
     public StringSchema required() {
         requiredState = !requiredState;

@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ValidatorTest {
-    private Validator validator = new Validator();
+    private final Validator validator = new Validator();
 
     @Test
     public void stringValidatorTest1() {
