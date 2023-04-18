@@ -2,7 +2,7 @@ package hexlet.code.schemas;
 
 public class NumberSchema extends BaseSchema {
     public NumberSchema required() {
-        addPredicate(value -> isNumber(value));
+        addPredicate(this::isNumber);
         return this;
     }
 
