@@ -5,13 +5,13 @@ import java.util.List;
 import java.util.function.Predicate;
 
 public class BaseSchema {
-    protected final List<Predicate<Object>> predicates = new ArrayList<>();
+    protected final List<Predicate<Object>> rules = new ArrayList<>();
 
-    protected void addPredicate(Predicate<Object> predicate) {
-        predicates.add(predicate);
+    protected final void addRule(Predicate<Object> predicate) {
+        rules.add(predicate);
     }
 
     public final boolean isValid(Object value) {
-        return predicates.stream().allMatch(predicate -> predicate.test(value));
+        return rules.stream().allMatch(rule -> rule.test(value));
     }
 }

@@ -2,17 +2,17 @@ package hexlet.code.schemas;
 
 public class NumberSchema extends BaseSchema {
     public NumberSchema required() {
-        addPredicate(this::isNumber);
+        addRule(this::isNumber);
         return this;
     }
 
     public NumberSchema positive() {
-        addPredicate(value -> value == null || (isNumber(value) && (int) value > 0));
+        addRule(value -> value == null || (isNumber(value) && (int) value > 0));
         return this;
     }
 
     public NumberSchema range(int min, int max) {
-        addPredicate(value -> (int) value >= min && (int) value <= max);
+        addRule(value -> (int) value >= min && (int) value <= max);
         return this;
     }
 
